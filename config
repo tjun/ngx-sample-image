@@ -1,3 +1,13 @@
 ngx_addon_name=ngx_sample_image_module
+ngx_feature_libs=-lcurl
+CORE_LIBS="$CORE_LIBS -lcurl"
 HTTP_MODULES="$HTTP_MODULES ngx_http_sample_image_module"
-NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/src/ngx_http_sample_image_module.c"
+
+NGX_ADDON_SRCS="$NGX_ADDON_SRCS \
+		$ngx_addon_dir/src/ngx_http_sample_image_module.c \
+		$ngx_addon_dir/src/http-get/http-get.c \
+		$ngx_addon_dir/src/parson/parson.c"
+
+NGX_ADDON_DEPS="$NGX_ADDON_DEPS \
+		$ngx_addon_dir/src/http-get/http-get.h \
+		$ngx_addon_dir/src/parson/parson.h"

@@ -1,0 +1,10 @@
+{
+  "name": "sample-image-nginx-module",
+  "version": "1.0.0",
+  "repo": "tjun/sample-image-nginx-module",
+  "dependencies": {
+    "stephenmathieson/http-get.c": "0.1.0",
+    "kgabis/parson": "*"
+  },
+  "install": "make install"
+}
